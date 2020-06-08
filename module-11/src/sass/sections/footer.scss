@@ -1,0 +1,59 @@
+.footer {
+  &__caption {
+    font-family: $main-font;
+    @include font(400, 14px, 1.2);
+    color: $text-color;
+
+    &-link {
+      color: $color-after;
+      font-weight: 400;
+      text-decoration: none;
+      line-height: 1.2;
+    }
+  }
+
+  &__wrapper {
+    @extend %flex-wrap;
+    justify-content: space-between;
+    border-top: 1px solid $footer-border-color;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    align-items: center;
+  }
+}
+
+.subscribe {
+  @extend %flex-wrap;
+  align-items: center;
+
+  &__btn {
+    text-transform: uppercase;
+    text-align: center;
+    font-family: $main-font;
+    @include font(700, 14px, 1.2);
+    color: $main-color;
+    border: none;
+    background-color: $icon-color;
+    width: 150px;
+    height: 40px;
+    cursor: pointer;
+  }
+}
+
+input::placeholder {
+  font-family: $secondary-font;
+  @include font(300, 15px, 24px);
+  color: $placeholder-color;
+  font-style: italic;
+}
+
+.input {
+  width: 230px;
+  height: 40px;
+  border: 1px solid $input-border-color;
+  background-color: $main-color;
+  padding-left: 13px;
+  font-family: $secondary-font;
+  @include font(300, 15px, 24px);
+  color: $text-color;
+}

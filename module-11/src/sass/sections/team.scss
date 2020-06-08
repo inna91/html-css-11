@@ -1,0 +1,100 @@
+.team {
+  padding-top: 50px;
+  padding-bottom: 80px;
+
+  &__title {
+    margin-bottom: 45px;
+  }
+
+  &__list {
+    @extend %flex-wrap;
+    justify-content: space-between;
+
+    &-item {
+      &-pic-wrap {
+        position: relative;
+        margin-bottom: 29px;
+        transition: transform 0.2s linear, box-shadow 0.2s linear;
+      }
+
+      &-name {
+        font-family: $main-font;
+        @include font(400, 14px, 1.2);
+        color: $text-color;
+        @extend %text-align;
+        margin-bottom: 14px;
+      }
+
+      &-profession {
+        font-family: $secondary-font;
+        @include font(300, 15px, 24px);
+        color: $descr-color;
+        text-align: center;
+      }
+
+      &:hover {
+        .team__overlay {
+          opacity: 1;
+          visibility: visible;
+        }
+      }
+    }
+  }
+
+  &__overlay {
+    background-image: linear-gradient(
+      0deg,
+      rgba(252, 227, 138, 0.9) 0%,
+      rgba(243, 129, 129, 0.9) 100%
+    );
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    @extend %flex-wrap;
+    align-items: center;
+    justify-content: center;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.2s linear, visibility 0.2s linear;
+  }
+}
+
+.social-list {
+  @extend %flex-wrap;
+
+  &__item {
+    &:not(:last-child) {
+      margin-right: 1px;
+    }
+
+    &-link {
+      display: block;
+      width: 56px;
+      height: 56px;
+      background-color: $color-hover;
+      transition: background-color 0.2s linear;
+
+      &:hover {
+        background-color: $color-after;
+
+        .social-list__item-svg {
+          fill: $main-color;
+        }
+      }
+    }
+
+    &-svg {
+      fill: $color-after;
+      width: 32px;
+      height: 32px;
+      transform: translate(40%, 40%);
+    }
+  }
+}
+
+.team__list-item:hover .team__list-item-pic-wrap {
+  transform: translate(-10px, -10px);
+  box-shadow: 10px 10px rgb(149, 225, 211);
+}
